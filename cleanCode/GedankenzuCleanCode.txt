@@ -1,0 +1,111 @@
+Clean Code
+==========
+
+Idee
+	Kurze Einführung in die 5S Philosophie (was einfach gutem Handwerk entspricht)
+
+	Praxisbezug: Suchen wir uns in unserem Code Beispiele die schlecht sind und mit denen wir ein gemeinsames Refactoring machen und dabei immer Bezug nehmen zu den 5S.
+
+Ziel
+	Können zu erwerben. Bedeutet, dir die Prinzipien, Patterns, Techniken und Heuristiken anzueignen, die jeder Fachmann kennt (Wissen) und sich dieses Wissen einprägen, indem du hart arbeitest (Arbeit).
+	Du willst guten Code von schlechtem Code unterscheiden können und selber guten Code schreiben oder schlechten Code in guten Code transformieren.
+
+	Wie Peter schon im TMS Dojo als erstes aufgeschrieben hat.
+
+	"Wer aufhört, besser zu werden, hat aufgehört, gut zu sein."
+	Philip Rosenthal
+
+
+Umsetzung
+	Die mit einem + versehenen Abschnitte können als Übung in deinem Code verwendet werden.
+
+5S Philosophie
+
+	5S bezieht sich auf einen Satz von Diszplinen oder Tätigkeitsbereichen und verkörpern somit die Bedeutung von Lean.
+
+	Die Software Praxis erfordert eine gewisse Disziplin: Fokus, Aufmerksamkeit und Denken.
+
+	* Seiri oder Organisation
+		Zu wissen, wo sich die Dinge befinden, ist erfolgsentscheidend.
+		Dazu gehört das Vergeben geeigneter Namen
+
+
+	* Seiton oder Ordentlichkeit
+		Ein Platz für alles, und alles an seinem Platz. Ein Code Abschnitt sollte da stehen, wo du ihn zu finden erwartest; und falls er nicht da steht, solltest du ein Refactoring am Code vorhnehmen, sodass er danach an der erwarteten Stelle steht.
+
+	* Seiso oder Sauberkeit
+		Sorge dafür, dass dein Arbeitsplatz sauber ist. Kommentare und auskommentierte Codezzeilen, die den Verlauf der Entwicklung oder Wünsche für die Zukunft wiedergeben sind Müll.
+		Weg damit
+		Pfadfinderregel: 
+			Wenn du deinen Code ein wenig sauberer eincheckst, als du ihn ausgecheckt hast, kann der Code einfach nicht verrotten.
+
+
+		Sauberer Code
+			- erfordert disziplinierten Einsatz zahlreicher Techniken
+			- ist göttlich verlangt aber nicht nach Perfektion, sondern nur nach Ehrlichkeit und dem Bemühen unssere Bestes zu geben. Irren ist männlich, vergeben ist göttlich.
+			- ist lesbar wie wohlgeschriebene Prosa (liest sich wie ein Buch)
+			- ist einfach und hat ein gutes Design.  Dabei geht es nicht nur darum, wie etwas aussieht und sich anfühlt. Design ist wie etwas funktioniert (Steve Jobs).
+			- besteht alle Tests
+			- enthält keine Duplizierung
+			- minimiert die Anzahl der Entities, also Klassen, Methoden, Funktionen usw.
+
+	* Seiketsu oder Standardisierung
+		Wie haltest du deinen Arbeitsplatz sauber? Einen konsistenten Codierstiel der im Team gemeinsam erfolgt wird.
+
+		+ Namen
+			Der Name einer Variablen, Funktion oder Klasse sollte aussagen warum er existiert, was er tut und wie er benutzt wird. Wenn ein Name einen Kommentar erfordert, dann drückt er seinen Zweck nicht aus.
+				- Fehlinformationen und irreführende Bezeichnungen vermeiden
+				- Unterschiede deutlich machen
+				- Aussprechbare, suchbare Namen verwenden
+				- Interfaces sollen nicht mit I beginnen
+				- Klassennamen und Objekte sollen einen Namen aus einem Substantiv bestehen.
+				- Methodennamen sollten aus einem Verb bestehen.
+				- Accessoren, Mutatoren oder Prädikate sollen nach ihrem Wert benannt werden.
+				- Verwende ein konsistentes Lexikon für Klassen und Methoden
+					z.b. vermeide fetch,retrieve und get in gleichwertiger Methoden von verschiedenen Klassen zu verwenden.
+				- Verwende die Namen der Lösungsdomäne. Deshalb solltest du die Fachbegriffe der 	Informatik, Algorithmennamen, Patternnamen usw. verwenden. Z.B. AccountVisitor in Anlehnung des Visitor Patterns.
+				- Namen der Problemdomänen nur wenn es keine sinnvollen Fachbegriff aus der Informatik ableiten lässt.
+				- Gib den Namen einen bedeutungsvollen Kontext aber vermeide überflüssige Kontexte
+				- Habe keine Angst vor langen Namen
+
+		+ Funktionen
+			Sollten klein, kleiner am Kleinsten sein.
+			Erfüllen eine Aufgabe (denke an die Unix Tools, die können nur eines, dies aber perfekt)
+			Abstraktionsebenen
+				- Unterteile Funktionen in verschiedene Abstraktionsebenen und vermische diese nicht.
+				- Eine Funktion solten die UM-ZU Absatzregel verwenden
+					Beispiele finden für um zu 
+
+			Halte dich an die Stepdown Regel - Code sollte von oben nach unten gelesen werden können.
+			sollen das Single-Responsibility Prinzip einhalten
+			sollen das Open-Closed-Prinzip einhalten.
+			Vermeide verschiedene Funktionen mit derselben Struktur zu schreiben - z.B.
+			Argumente
+				- Die ideale Anzahl von Fuktionsargumenten ist null. 
+				- 3 Argumente sollten vermiedern werden. 
+				- Mehr als 3 Argumente erforden eine spezielle Begründung.
+
+			?Warum gehören Switch Anweisungen in das Kapitel Funktionen?
+				- wird eine Switch Anweisung in einer Funktion verwendet, 
+					- dann wird die Funktion automatisch mehr als eine Aufgabe zu erledigen haben.
+					- wird sie meistens gross
+					- verstösst sie oftmals gegen SRP und OCP
+
+
+	* Shutsuke oder (Selbst-)Disziplin
+		Sei bereit die Disziplin aufzubringen, den Praktiken zu folgen und deine Arbeit regelmässig zu überdenken und dich zu ändern.
+
+
+Eine verantwortliche, professionelle Einstellung zum Beruf Software Entwickler, der sich um den Lebensyjlus eines Produktes kümmern soll. Inspziere deine Software jeden Tag und tausche "Verschleissteile" bevor sie kaputt gehen. Im Code bedeutet das: 
+	* Erstelle Software die von vornherein wartungsfreundlich ist
+	* Schreibe lesbaren Code (Code sollte sich wie ein Buch lesen)
+	* Nimm dir ein gnadenloses Refactoring vor, und zwar in kurzen Zeitspannen von Tagen und Wochen.
+
+
+
+Spezielle Bezeichnungen in der SW Entwicklung
+	* Wading (Waten) durch schlechten Code waten/wursteln in einem Morast von Schlingpflanzen, verborgener Fallgruben.
+
+	* Gesetz von LeBlanc: Später gleich niemals.
+
+
